@@ -33,7 +33,7 @@ pipeline {
             steps {
                 withCredentials([[
                     $class: 'AmazonWebServicesCredentialsBinding',
-                    credentialsId: 'aws-creds'
+                    credentialsId: 'aws-credentials'
                 ]]) {
                     sh """
                       aws ecr get-login-password --region ${AWS_REGION} | \
